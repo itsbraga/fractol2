@@ -6,24 +6,29 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 16:07:06 by annabrag          #+#    #+#             */
-/*   Updated: 2024/03/18 00:36:16 by annabrag         ###   ########.fr       */
+/*   Updated: 2024/03/20 23:15:53 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/fractol.h"
 
-void	init_mlx(t_data *fractal)
+static void	init_fdata(t_fdata *fractal)
 {
+	fractal->max_iter = 100;
+	fractal->zoom = 1.0;
+	fractal->esc_val = 4.0;
+}
+
+void	init_mlx(t_fdata *fractal)
+{
+	t_img	img;
 	char	*title;
 
-	fmemset_struct(&fractal->img, 0, sizeof(t_img));
+	title = ft_strjoin("Ana's fract-ol: ", fractal->name);
+	memset4struct(&img, 0, sizeof(t_img));
 	fractal->mlx_co = mlx_init();
 	if (!fractal->mlx_co)
-	{
-		ft_printf(BOLD RED "MiniLibX connection failed!\n");
-		exit(1);
-	}
-	title = ft_strjoin("Ana's fract-ol: ", fractal->kind);
+		(ft_printf(BOLD RED "MiniLibX connection failed!\n"), exit(1));
 	fractal->win = mlx_new_window(fractal->mlx_co, WIN_WIDTH, WIN_HEIGHT, 
 					title);
 	if (!fractal->win)
@@ -35,41 +40,26 @@ void	init_mlx(t_data *fractal)
 						&fractal->img.bpp,
 						&fractal->img.line_len,
 						&fractal->img.endian);
-	init_data(fractal);
+	init_fdata(fractal);
 	handle_mlx_hooks(fractal);
 }
 
-void	init_data(t_data *fractal)
+void	draw(t_fdata *fractal)
 {
-	fractal->max_iter = 100;
-	fractal->zoom = 1.0;
-	fractal->esc_val = 4.0;
-}
+	double	x;
+	double	y;
 
-void	mandelbrot(char **argv, t_data *fractal)
-{
-	t_complex	z;
-	t_complex	c;
-	
-	fractal->kind = argv[1];
-	init_mlx(fractal);
-	fmemset_struct(&z, 0, sizeof(t_complex));
-	fmemset_struct(&c, 0, sizeof(t_complex));
-	draw(fractal);
-	mlx_loop(fractal->mlx_co);
-}
-
-void	julia(char **argv, t_data *fractal)
-{
-	t_complex	z;
-	t_complex	c;
-	
-	fractal->kind = argv[1];
-	init_mlx(fractal);
-	fmemset_struct(&z, 0, sizeof(t_complex));
-	fmemset_struct(&c, 0, sizeof(t_complex));
-	fractal->j_real = atod(argv[2]);
-	fractal->j_imagin = atod(argv[3]);
-	draw(fractal);
-	mlx_loop(fractal->mlx_co);
+	y = 0;
+	while (y < WIN_HEIGHT)
+	{
+		x = 0;
+		while (x < WIN_WIDTH)
+		{
+			handle_pixels(fractal, x, y);
+			x++;
+		}
+		y++;
+	}
+	mlx_put_image_to_window(fractal->mlx_co, fractal->win, 
+		fractal->img.img_ptr, 0, 0);
 }

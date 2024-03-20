@@ -55,13 +55,13 @@ CONFIGS_DIR		=	configs/
 CONFIGS_FILES	=	mlx_exit.c mlx_hooks.c
 
 EXEC_DIR		=	exec/
-EXEC_FILES		=	init.c formula.c
+EXEC_FILES		=	formula.c sets.c init.c
 
 PARSING_DIR		=	parsing/
 PARSING_FILES	=	check_args.c parse_args.c
 
 UTILS_DIR		=	utils/
-UTILS_FILES		=	pixels.c draw.c utils.c
+UTILS_FILES		=	pixels.c utils.c
 
 # BONUS_FILES	=	
 

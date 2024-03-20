@@ -6,7 +6,7 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 15:11:51 by annabrag          #+#    #+#             */
-/*   Updated: 2024/03/17 17:19:48 by annabrag         ###   ########.fr       */
+/*   Updated: 2024/03/20 22:55:27 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,22 @@
 
 # define MOUSE_WHEEL_UP 4
 # define MOUSE_WHEEL_DOWN 5
+
+/******************************************************************************\
+ * SHOW POSSIBLE PARAMS (MENU)
+\******************************************************************************/
+
+# define SEP "================================="
+# define HEADER " HELP MENU "
+# define INTRO "Here's how to use this program depending on its fractal set:"
+# define MANDELBROT "Mandelbrot\t"
+# define M_ARG "--> ./fractol mandelbrot\n"
+# define JULIA "Julia\t\t"
+# define J_ARGS "--> ./fractol julia [double] [double]\n\n\n"
+# define EX_HEADER " EXAMPLES "
+# define EXAMPLE(x1, x2, x3) #x1 "\t--> ARGS=\"" \
+								#x2 " " #x3"\"; ./fractol julia \"$ARGS\"\n"
+# define EXAMPLE_MSG "\n\nHere's some examples of Julia's set:\n\n"
 
 /******************************************************************************\
  * COLORS
