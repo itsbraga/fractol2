@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
+/*   By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 18:50:28 by annabrag          #+#    #+#             */
-/*   Updated: 2024/03/20 22:50:50 by annabrag         ###   ########.fr       */
+/*   Updated: 2024/03/21 22:54:44 by art3mis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ bool	global_check_successful(char **argv)
 		write(STDERR_FILENO, "Error: Invalid argument. ", 25);
 		write(STDERR_FILENO, "Should be decimal.\n\n", 19);
 		ft_printf(BOLD EX_HEADER RESET EXAMPLE_MSG);
-		help_julia_examples();
+		julia_examples();
 		return (false);
 	}
 	if (have_duplicate(argv[2]) || have_duplicate(argv[3]))

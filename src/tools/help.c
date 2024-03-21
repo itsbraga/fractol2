@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   help.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
+/*   By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 23:39:10 by annabrag          #+#    #+#             */
-/*   Updated: 2024/03/20 23:09:40 by annabrag         ###   ########.fr       */
+/*   Updated: 2024/03/21 23:20:45 by art3mis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/fractol.h"
 
-// ft_printf("|\tElephant valley\t--> ARGS="0.0 0.3"; ./fractol "$ARGS"\n");
-void	help_julia_examples(void)
+void	tutorial(void)
+{
+	ft_printf("\n" BOLD SEP HEADER SEP "\n\n");
+	ft_printf("		available commands to use \n\n");
+	ft_printf(" Arrows to move: ↑ ↓ ← → \n");
+	ft_printf(" Mouse wheel can zoom in and out \n");
+}
+
+void	julia_examples(void)
 {
 	ft_printf("%s", EXAMPLE(Elephant Valley, 0.0, 0.3));
 	ft_printf("%s", EXAMPLE(Sea Horse Valley, -0.75, 0.1));
@@ -26,27 +33,12 @@ void	help_julia_examples(void)
 	ft_printf("\n");
 }
 
-void	show_fparams(void)
+void	help_menu(void)
 {
-	ft_printf("\n" BOLD SEP HEADER SEP "\n\n");
+	ft_printf("\n" BOLD SEP ARG_HEADER SEP "\n\n");
 	ft_printf(RESET INTRO"\n\n");
-	ft_printf(BOLD PINK MANDELBROT RESET M_ARG);
-	ft_printf(BOLD PINK JULIA RESET J_ARGS BOLD SEP EX_HEADER SEP "\n\n");
-	ft_printf(RESET ITAL RED "(For Julia sets only)\n\n" RESET);
-	help_julia_examples();
-}
-
-void	*memset4struct(void *s, int c, size_t n)
-{
-	size_t			i;
-	unsigned char	*fractal;
-
-	i = 0;
-	fractal = s;
-	while (i < n)
-	{
-		*(fractal + i) = c;
-		i++;
-	}
-	return (fractal);
+	(ft_printf(BOLD PINK M_ARG RESET), ft_printf(BOLD PINK J_ARGS RESET));
+	ft_printf(BOLD SEP EX_HEADER SEP RESET "\n\n");
+	ft_printf(ITAL RED "(For Julia sets only)\n\n" RESET);
+	julia_examples();
 }

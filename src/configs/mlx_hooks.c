@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_hooks.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
+/*   By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 13:02:44 by annabrag          #+#    #+#             */
-/*   Updated: 2024/03/20 22:30:45 by annabrag         ###   ########.fr       */
+/*   Updated: 2024/03/21 23:51:19 by art3mis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/fractol.h"
 
-static int key_hook(int keycode, t_fdata *fractal)
+static int key_hook(int keycode, t_data *fractal)
 {
     if (keycode == XK_Escape)
         clean(XK_Escape, fractal);
-    return (EXIT_SUCCESS);
+    // return (EXIT_SUCCESS);
 }
 
-static int mouse_hook(int mousecode, double x, double y, t_fdata *fractal)
+static int mouse_hook(int mousecode, double x, double y, t_data *fractal)
 {
     (void)x;
     (void)y;
@@ -37,7 +37,7 @@ static int mouse_hook(int mousecode, double x, double y, t_fdata *fractal)
     return (EXIT_SUCCESS);
 }
 
-void	handle_mlx_hooks(t_fdata *fractal)
+void	handle_mlx_hooks(t_data *fractal)
 {
 	mlx_key_hook(fractal->win, key_hook, fractal);
 	mlx_hook(fractal->win, 04, (1L << 2), mouse_hook, fractal);

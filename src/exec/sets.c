@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   sets.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
+/*   By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 22:05:48 by annabrag          #+#    #+#             */
-/*   Updated: 2024/03/20 23:11:23 by annabrag         ###   ########.fr       */
+/*   Updated: 2024/03/21 22:55:50 by art3mis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/fractol.h"
 
-void	mandelbrot(char **argv, t_fdata fractal)
+void	mandelbrot(char **argv, t_data fractal)
 {
 	t_complex	z;
 	t_complex	c;
@@ -25,7 +25,7 @@ void	mandelbrot(char **argv, t_fdata fractal)
 	mlx_loop(fractal.mlx_co);
 }
 
-void	julia(char **argv, t_fdata fractal)
+void	julia(char **argv, t_data fractal)
 {
 	t_complex	z;
 	t_complex	c;

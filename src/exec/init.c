@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
+/*   By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 16:07:06 by annabrag          #+#    #+#             */
-/*   Updated: 2024/03/20 23:15:53 by annabrag         ###   ########.fr       */
+/*   Updated: 2024/03/21 23:13:54 by art3mis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/fractol.h"
 
-static void	init_fdata(t_fdata *fractal)
+static void	init_data(t_data *fractal)
 {
-	fractal->max_iter = 100;
+	fractal->max_it = 100;
 	fractal->zoom = 1.0;
 	fractal->esc_val = 4.0;
 }
 
-void	init_mlx(t_fdata *fractal)
+void	init_mlx(t_data *fractal)
 {
 	t_img	img;
 	char	*title;
@@ -28,7 +28,7 @@ void	init_mlx(t_fdata *fractal)
 	memset4struct(&img, 0, sizeof(t_img));
 	fractal->mlx_co = mlx_init();
 	if (!fractal->mlx_co)
-		(ft_printf(BOLD RED "MiniLibX connection failed!\n"), exit(1));
+		(ft_printf(BOLD RED "MiniLibX connection failed!\n"), exit(EXIT_FAILURE));
 	fractal->win = mlx_new_window(fractal->mlx_co, WIN_WIDTH, WIN_HEIGHT, 
 					title);
 	if (!fractal->win)
@@ -40,14 +40,14 @@ void	init_mlx(t_fdata *fractal)
 						&fractal->img.bpp,
 						&fractal->img.line_len,
 						&fractal->img.endian);
-	init_fdata(fractal);
+	init_data(fractal);
 	handle_mlx_hooks(fractal);
 }
 
-void	draw(t_fdata *fractal)
+void	draw(t_data *fractal)
 {
-	double	x;
-	double	y;
+	int	x;
+	int	y;
 
 	y = 0;
 	while (y < WIN_HEIGHT)
@@ -55,7 +55,7 @@ void	draw(t_fdata *fractal)
 		x = 0;
 		while (x < WIN_WIDTH)
 		{
-			handle_pixels(fractal, x, y);
+			set_pixels(fractal, x, y);
 			x++;
 		}
 		y++;

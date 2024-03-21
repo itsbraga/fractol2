@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
+/*   By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 16:44:52 by annabrag          #+#    #+#             */
-/*   Updated: 2024/02/17 01:54:15 by annabrag         ###   ########.fr       */
+/*   Updated: 2024/03/21 18:40:41 by art3mis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putstr_color_fd(char *color, char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
+void				ft_putendl_color_fd(char *color, char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 char				iam_a_space(char c);
 char				*ft_strchr(const char *str, int c);

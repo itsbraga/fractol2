@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+         #
+#    By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 11:07:10 by annabrag          #+#    #+#              #
-#    Updated: 2024/03/20 23:13:55 by annabrag         ###   ########.fr        #
+#    Updated: 2024/03/21 18:41:09 by art3mis          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,7 +68,7 @@ RM			=	rm -rf
 
 FT_FD_DIR		= 	ft_fd/
 FT_FD_FILES		= 	ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c \
-					ft_putstr_color_fd.c
+					ft_putstr_color_fd.c ft_putendl_color_fd
 
 FT_IS_DIR 		= 	ft_is/
 FT_IS_FILES		= 	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \

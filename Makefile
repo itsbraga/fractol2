@@ -60,8 +60,8 @@ EXEC_FILES		=	formula.c sets.c init.c
 PARSING_DIR		=	parsing/
 PARSING_FILES	=	check_args.c parse_args.c
 
-UTILS_DIR		=	utils/
-UTILS_FILES		=	pixels.c utils.c
+TOOLS_DIR		=	tools/
+TOOLS_FILES		=	pixels.c memset.c help.c errors.c
 
 # BONUS_FILES	=	
 
@@ -79,7 +79,7 @@ SRC_DIR		=	src/
 SRCS		=	$(addprefix $(CONFIGS_DIR), $(CONFIGS_FILES)) \
 				$(addprefix $(EXEC_DIR), $(EXEC_FILES)) \
 				$(addprefix $(PARSING_DIR), $(PARSING_FILES)) \
-				$(addprefix $(UTILS_DIR), $(UTILS_FILES)) \
+				$(addprefix $(TOOLS_DIR), $(TOOLS_FILES)) \
 				main.c
 
 OBJ_DIR		=	obj/
@@ -87,7 +87,7 @@ OBJ_DIR		=	obj/
 OBJ_NAMES	=	$(SRCS:.c=.o)
 
 OBJ_DIRS	=	$(addprefix $(OBJ_DIR), $(CONFIGS_DIR), $(EXEC_DIR), \
-						$(PARSING_DIR), $(UTILS_DIR))
+						$(PARSING_DIR), $(TOOLS_DIR))
 
 OBJS		=	$(addprefix $(OBJ_DIR), $(OBJ_NAMES))
 
@@ -108,7 +108,7 @@ OBJS		=	$(addprefix $(OBJ_DIR), $(OBJ_NAMES))
 DEP_NAMES	=	$(SRCS:.c=.d)
 
 DEP_DIRS	=	$(addprefix $(OBJ_DIR), $(CONFIGS_DIR), $(EXEC_DIR), \
-						$(PARSING_DIR), $(UTILS_DIR))
+						$(PARSING_DIR), $(TOOLS_DIR))
 
 DEPS		=	$(addprefix $(OBJ_DIR), $(DEP_NAMES))
 
