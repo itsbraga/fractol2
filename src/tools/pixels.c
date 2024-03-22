@@ -6,7 +6,7 @@
 /*   By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 17:55:00 by annabrag          #+#    #+#             */
-/*   Updated: 2024/03/21 23:06:32 by art3mis          ###   ########.fr       */
+/*   Updated: 2024/03/22 17:43:51 by art3mis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	set_pixels(t_data *fractal, double x, double y)
 		{
 			color = scale(it, 0xFFFFFF, 0x56F1FF, fractal->max_it);
 			put_pixels(&fractal->img, x, y, color);
-			break ;
+			return ;
 		}
 		it++;
 	}

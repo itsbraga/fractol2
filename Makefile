@@ -122,7 +122,8 @@ DEPS		=	$(addprefix $(OBJ_DIR), $(DEP_NAMES))
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 				@mkdir -p $(dir $@)
 				@printf "$(BOLD)$(ITAL)$(PURPLE)Compiling: $(RESET)$(ITAL)$<          \r"
-				@$(CC) $(DEPFLAGS) $(CFLAGS) -c $< -o $@
+#				@$(CC) $(DEPFLAGS) $(CFLAGS) -c $< -o $@
+				@$(CC) $(DEPFLAGS) $(CFLAGS) --c $< -o $@
 -include $(DEPS)
 
 $(NAME): $(OBJS)

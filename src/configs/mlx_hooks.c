@@ -6,7 +6,7 @@
 /*   By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 13:02:44 by annabrag          #+#    #+#             */
-/*   Updated: 2024/03/21 23:51:19 by art3mis          ###   ########.fr       */
+/*   Updated: 2024/03/22 17:44:17 by art3mis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int key_hook(int keycode, t_data *fractal)
 {
     if (keycode == XK_Escape)
         clean(XK_Escape, fractal);
-    // return (EXIT_SUCCESS);
+    return (EXIT_SUCCESS);
 }
 
 static int mouse_hook(int mousecode, double x, double y, t_data *fractal)

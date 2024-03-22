@@ -31,7 +31,7 @@ void	*mlx_init()
 	if (mlx_int_get_visual(xvar)==-1)
 	{
 		printf(ERR_NO_TRUECOLOR);
-		exit(EXIT_FAILURE);
+		exit(1);
 	}
 	xvar->win_list = 0;
 	xvar->loop_hook = 0;

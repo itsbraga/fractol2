@@ -6,7 +6,7 @@
 /*   By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 16:15:48 by annabrag          #+#    #+#             */
-/*   Updated: 2024/03/21 23:50:19 by art3mis          ###   ########.fr       */
+/*   Updated: 2024/03/22 17:50:00 by art3mis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ bool		global_check_successful(char **argv);
 void		*memset4struct(void *s, int c, size_t n);
 
 void		julia_examples(void);
+void		tutorial(void);
 void		help_menu(void);
 void		help_and_exit(void);
 void		errcontext_exit(void);
