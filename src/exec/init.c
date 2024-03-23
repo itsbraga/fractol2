@@ -6,7 +6,7 @@
 /*   By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 16:07:06 by annabrag          #+#    #+#             */
-/*   Updated: 2024/03/21 23:13:54 by art3mis          ###   ########.fr       */
+/*   Updated: 2024/03/23 23:03:43 by art3mis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	init_data(t_data *fractal)
 {
 	fractal->max_it = 100;
 	fractal->zoom = 1.0;
-	fractal->esc_val = 4.0;
+	fractal->color = 0;
 }
 
 void	init_mlx(t_data *fractal)

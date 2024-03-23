@@ -6,7 +6,7 @@
 /*   By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 15:11:51 by annabrag          #+#    #+#             */
-/*   Updated: 2024/03/21 22:53:26 by art3mis          ###   ########.fr       */
+/*   Updated: 2024/03/23 23:04:23 by art3mis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
  * WINDOW
 \******************************************************************************/
 
-# define WIN_WIDTH 1920
-# define WIN_HEIGHT 1080
+# define WIN_WIDTH 1520
+# define WIN_HEIGHT 1100
 
 /******************************************************************************\
  * NAVIGATION
@@ -33,18 +33,27 @@
 
 # define SEP "================================="
 # define HEADER " HELP MENU "
-# define ARG_HEADER "  ARGS  "
-# define INTRO "How to explore the fantastic world of fractals:\n\n"
-# define M_ARG "-->\t./fractol mandelbrot\n"
-# define J_ARGS "-->\t./fractol julia [double] [double]\n\n\n"
+# define ARG_HEADER "=  ARGS  ="
+# define INTRO1 "How to explore the "
+# define INTRO2 "fantastic world of fractals:\n"
+# define M_ARG1 "Mandelbrot\t\t"
+# define M_ARG2 "-->\t./fractol mandelbrot\n"
+# define J_ARGS1 "Julia\t\t\t"
+# define J_ARGS2 "-->\t./fractol julia [double] [double]\n"
 # define EX_HEADER " EXAMPLES "
-# define EXAMPLE(x1, x2, x3) #x1 "\t--> ARGS=\"" \
+# define EXAMPLE(x1, x2, x3) #x1 "\t\t-->\tARGS=\"" \
+								#x2 " " #x3"\"; ./fractol julia \"$ARGS\"\n"
+# define EXAMPLE2(x1, x2, x3) #x1 "\t-->\tARGS=\"" \
+								#x2 " " #x3"\"; ./fractol julia \"$ARGS\"\n"
+# define EXAMPLE7(x1, x2, x3) #x1 "\t\t\t-->\tARGS=\"" \
 								#x2 " " #x3"\"; ./fractol julia \"$ARGS\"\n"
 # define EXAMPLE_MSG "\n\nExamples of Julia's set:\n\n"
 
 /******************************************************************************\
  * COLORS
 \******************************************************************************/
+
+void	rainbow_txt(const char *str);
 
 # define SALMON 0xFA8072
 # define ORANGE_RED 0xFF4500

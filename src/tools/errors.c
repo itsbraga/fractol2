@@ -6,7 +6,7 @@
 /*   By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 23:20:22 by art3mis           #+#    #+#             */
-/*   Updated: 2024/03/21 23:41:49 by art3mis          ###   ########.fr       */
+/*   Updated: 2024/03/23 21:29:35 by art3mis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void    help_and_exit(void)
 {
-    perror("Error\n\n");
+    perror("\nError");
 	ft_printf("Please, check the menu below:\n\n");
 	ft_printf(BOLD SEP EX_HEADER SEP RESET "\n\n");
 	julia_examples();
@@ -23,6 +23,6 @@ void    help_and_exit(void)
 
 void    errcontext_exit(void)
 {
-    perror("Error\n");
+    perror("\nError");
     exit(EXIT_FAILURE);
 }

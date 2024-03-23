@@ -28,14 +28,13 @@ PINK		:=	\e[38;2;255;182;193m
 #################################################################################
 
 NAME		=	fractol
-# NAME_BONUS	=	fractol_bonus
 
 LIBFT_PATH	=	libft/
 LIBFT_X		=	$(addprefix $(LIBFT_PATH), libft.a)
 MLX_PATH	=	mlx/
 MLX_X		=	$(addprefix $(MLX_PATH), libmlx.a)
 
-CC			=	clang
+CC			=	cc
 
 CFLAGS		=	-Wall -Wextra -Werror -g -g3
 MLXFLAGS	=	-Lmlx -lX11 -lXext
@@ -55,13 +54,13 @@ CONFIGS_DIR		=	configs/
 CONFIGS_FILES	=	mlx_exit.c mlx_hooks.c
 
 EXEC_DIR		=	exec/
-EXEC_FILES		=	formula.c sets.c init.c
+EXEC_FILES		=	equation.c sets.c init.c #main.c
 
 PARSING_DIR		=	parsing/
 PARSING_FILES	=	check_args.c parse_args.c
 
 TOOLS_DIR		=	tools/
-TOOLS_FILES		=	pixels.c memset.c help.c errors.c
+TOOLS_FILES		=	pixels.c help.c errors.c utils.c
 
 # BONUS_FILES	=	
 
@@ -87,7 +86,7 @@ OBJ_DIR		=	obj/
 OBJ_NAMES	=	$(SRCS:.c=.o)
 
 OBJ_DIRS	=	$(addprefix $(OBJ_DIR), $(CONFIGS_DIR), $(EXEC_DIR), \
-						$(PARSING_DIR), $(TOOLS_DIR))
+							$(PARSING_DIR), $(TOOLS_DIR))
 
 OBJS		=	$(addprefix $(OBJ_DIR), $(OBJ_NAMES))
 
@@ -108,7 +107,7 @@ OBJS		=	$(addprefix $(OBJ_DIR), $(OBJ_NAMES))
 DEP_NAMES	=	$(SRCS:.c=.d)
 
 DEP_DIRS	=	$(addprefix $(OBJ_DIR), $(CONFIGS_DIR), $(EXEC_DIR), \
-						$(PARSING_DIR), $(TOOLS_DIR))
+							$(PARSING_DIR), $(TOOLS_DIR))
 
 DEPS		=	$(addprefix $(OBJ_DIR), $(DEP_NAMES))
 
@@ -123,7 +122,7 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 				@mkdir -p $(dir $@)
 				@printf "$(BOLD)$(ITAL)$(PURPLE)Compiling: $(RESET)$(ITAL)$<          \r"
 #				@$(CC) $(DEPFLAGS) $(CFLAGS) -c $< -o $@
-				@$(CC) $(DEPFLAGS) $(CFLAGS) --c $< -o $@
+				@$(CC) $(DEPFLAGS) $(CFLAGS) -I/usr/include -Imlx -c $< -o $@
 -include $(DEPS)
 
 $(NAME): $(OBJS)
@@ -154,7 +153,8 @@ $(NAME): $(OBJS)
 				touch .build; fi
 			@printf "$(RESET)$(shell bash rainbow.sh "[FRACT-OL Mandatory]"): "
 			@printf "$(RESET)$(BOLD)$(PINK)Compilation done!\n\n$(RESET)"
-			@$(CC) $(CFLAGS) $(OBJS) -Inc $(LIBFT_X) -Inc $(MLX_X) $(MLXFLAGS) -o $(NAME)
+#			@$(CC) $(CFLAGS) $(OBJS) -Inc $(LIBFT_X) -Inc $(MLX_X) $(MLXFLAGS) -o $(NAME)
+			@$(CC) $(CFLAGS) $(OBJS) -Inc $(LIBFT_X) -Inc $(MLX_X) $(MLXFLAGS) -L/usr/lib -o $(NAME)
 			@printf "$(RESET)$(shell bash rainbow.sh "You can now generate fractals") 🌈\n\n"
 
 all:	$(NAME)
@@ -173,7 +173,7 @@ fclean: clean
 			@printf "$(BOLD)$(BLUE)[execs]: $(RESET)Full clean completed!\n\n"
 			@printf "\n. ⋅ ˚̣- : ✧ : – ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ₊° ˗ ˏ ˋ ♡ ˎˊ ˗ °₊ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ – : ✧ : -˚̣⋅ .\n\n\n"
 
-re:		fclean build all
+re:		fclean all
 			@printf "\n\n✨ $(BOLD)$(YELLOW)Cleaning and rebuilding done! $(RESET)✨\n\n"
 
 diff:
@@ -214,4 +214,4 @@ norm:
 # 		@printf "\n\n✨ $(BOLD)$(YELLOW)Bonuses successfully compiled! $(RESET)✨\n"
 
 
-.PHONY:		all build clean fclean re diff norm
+.PHONY:		all clean fclean re diff norm

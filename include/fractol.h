@@ -6,7 +6,7 @@
 /*   By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 16:15:48 by annabrag          #+#    #+#             */
-/*   Updated: 2024/03/22 17:50:00 by art3mis          ###   ########.fr       */
+/*   Updated: 2024/03/23 22:43:46 by art3mis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,9 @@ typedef	struct	s_fdata
 	char	*name;
 	double	max_it;
 	double	zoom;
-	double	j_real;
-	double	j_imagin;
-	double	esc_val;
+	double	julia_real;
+	double	julia_i;
+	int		color;
 }				t_data;
 
 /******************************************************************************\

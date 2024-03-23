@@ -6,7 +6,7 @@
 #    By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 11:07:10 by annabrag          #+#    #+#              #
-#    Updated: 2024/03/21 18:41:09 by art3mis          ###   ########.fr        #
+#    Updated: 2024/03/23 21:27:56 by art3mis          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,7 +68,7 @@ RM			=	rm -rf
 
 FT_FD_DIR		= 	ft_fd/
 FT_FD_FILES		= 	ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c \
-					ft_putstr_color_fd.c ft_putendl_color_fd
+					ft_putstr_color_fd.c ft_putendl_color_fd.c
 
 FT_IS_DIR 		= 	ft_is/
 FT_IS_FILES		= 	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
@@ -128,7 +128,8 @@ SRCS			=	$(addprefix $(FT_FD_DIR), $(FT_FD_FILES)) \
 					$(addprefix $(GNL_DIR), $(GNL_FILES)) \
 					$(addprefix $(FT_PRINTF_DIR), $(FT_PRINTF_FI)) \
 					$(addprefix $(FT_FROM_TO_DIR), $(FT_FROM_TO_FI)) \
-					$(addprefix $(MATHS_DIR), $(MATHS_FILES))
+					$(addprefix $(MATHS_DIR), $(MATHS_FILES)) \
+					colors.c
 
 OBJ_DIR			=	obj/
 
