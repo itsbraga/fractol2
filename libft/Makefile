@@ -6,7 +6,7 @@
 #    By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 11:07:10 by annabrag          #+#    #+#              #
-#    Updated: 2024/03/23 21:27:56 by art3mis          ###   ########.fr        #
+#    Updated: 2024/03/25 18:43:05 by art3mis          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -177,7 +177,7 @@ $(NAME): $(OBJS)
 		@$(LIBC) $(NAME) $(OBJS)
 		@printf "\n\n$(BOLD)$(shell bash rainbow.sh "[LIBFT, GNL, FT_PRINTF]") "
 		@printf "$(RESET)$(BOLD)$(YELLOW)have been successfully compiled!\n\n"
-		@printf "$(RESET)\n. ⋅ ˚̣- : ✧ : – ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ₊° ˗ ˏ ˋ ♡ ˎˊ ˗ °₊ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ – : ✧ : -˚̣⋅ .\n\n\n"
+		@printf "$(RESET)\n. ⋅ ˚̣- : ✧ : – ⭒ ⊹ ⭒ ⊹ ⭒ ₊° ˗ ˏ ˋ ♡ ˎˊ ˗ °₊ ⭒ ⊹ ⭒ ⊹ ⭒ – : ✧ : -˚̣⋅ .\n\n\n"
 
 san:	$(FSANITIZE)
 
@@ -189,7 +189,7 @@ fclean: clean
 		@$(RM) $(NAME)
 		@find . -name ".DS_Store" -delete
 		@printf "$(BOLD)$(PINK)[LIBFT, GNL, FT_PRINTF]: $(RESET)Full clean completed!\n\n"
-		@printf "\n. ⋅ ˚̣- : ✧ : – ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ₊° ˗ ˏ ˋ ♡ ˎˊ ˗ °₊ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ – : ✧ : -˚̣⋅ .\n\n"
+		@printf "\n. ⋅ ˚̣- : ✧ : – ⭒ ⊹ ⭒ ⊹ ⭒ ₊° ˗ ˏ ˋ ♡ ˎˊ ˗ °₊ ⭒ ⊹ ⭒ ⊹ ⭒ – : ✧ : -˚̣⋅ .\n\n"
 
 re:	fclean all
 		@printf "✨ $(BOLD)$(YELLOW)Cleaning and rebuilding done! $(RESET)✨\n\n"

@@ -6,7 +6,7 @@
 /*   By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 17:55:00 by annabrag          #+#    #+#             */
-/*   Updated: 2024/03/23 23:02:35 by art3mis          ###   ########.fr       */
+/*   Updated: 2024/03/25 18:20:09 by art3mis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static void	create_cplan(t_data *fractal, t_complex *z, t_complex *c, double x, 
 void	set_pixels(t_data *fractal, double x, double y)
 {
 	int			it;
-	// int			color;
+	int			color;
 	t_complex	z;
 	t_complex	c;
 	
@@ -57,8 +57,9 @@ void	set_pixels(t_data *fractal, double x, double y)
 		if ((z.real * z.real) + (z.imagin * z.imagin) > 4)
 		{
 			// color = scale(it, 0xC2BCD2, 0x473858, fractal->max_it);
-			// put_pixels(&fractal->img, x, y, color);
-			put_pixels(&fractal->img, x, y, fractal->color + (0xF682C8 * it));
+			color = scale(it, 0xFF99C8, 0xE4C1F9, fractal->max_it);
+			put_pixels(&fractal->img, x, y, color);
+			// put_pixels(&fractal->img, x, y, fractal->color + (0xF682C8 * it));
 			return ;
 		}
 		it++;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
+/*   By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 14:13:58 by annabrag          #+#    #+#             */
-/*   Updated: 2024/03/14 14:14:21 by annabrag         ###   ########.fr       */
+/*   Updated: 2024/03/25 17:49:07 by art3mis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,14 @@
 static double	atod_part2(char *s, int i)
 {
 	double	second;
+	double	divisor;
 
 	second = 0;
+	divisor = 1;
 	while (s[i] && (s[i] >= 48 && s[i] <= 57))
 	{
-		second = second / 10 + (s[i] - 48);
+		divisor /= 10;
+		second = second + (s[i] - 48) * divisor;
 		i++;
 	}
 	return (second);
